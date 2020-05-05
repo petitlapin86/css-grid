@@ -74,12 +74,31 @@
             /* parent element */
             display: grid; /*set the container to a grid (versus say flexbox)*/
             grid-template-columns: 1fr 1fr 1fr; /*define the number and size of columns you can use pixels px or percentages % or fractional units FR */
-
+            grid-gap: 1rem;
+            /*
+            to specify the gap for column and row separately do this:
+            grid-column-gap: 1rem;
+            grid-row-gap: 2rem;
+            */
 
 
         }
         .article {
             /* child element */
+        }
+
+        /* Media queries are for telling different screen sizes how to look */
+        @media (max-width: 768px) {
+          .article-grid {
+            grid-template-columns: 1fr 1fr;   /* for a smaller screensize im dropping to 2 columns*/
+          }
+        }
+
+        /* Media queries are for telling different screen sizes how to look */
+        @media (max-width: 480px) {
+          .article-grid {
+            grid-template-columns: 1fr;   /* for a smaller screensize im dropping to 1 columns */
+          }
         }
 
     </style>
