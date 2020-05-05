@@ -47,7 +47,7 @@
             <p class="article__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit vel ipsum id pulvinar. Vivamus finibus eros sit amet massa feugiat feugiat.</p>
             <a href="#" class="article__button">Read More &raquo;</a>
         </div>
-        <div class="article large">
+        <div class="article medium">
             <h3 class="article__headline"><a href="#">This is an article headline</a></h3>
             <img class="article__image" src="../assets/images/road.jpg">
             <p class="article__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit vel ipsum id pulvinar. Vivamus finibus eros sit amet massa feugiat feugiat.</p>
@@ -55,12 +55,12 @@
         </div>
         <div class="article small">
             <h3 class="article__headline"><a href="#">This is an article headline</a></h3>
-            <img class="article__image" src="../assets/images/windows.jpg">
+
             <p class="article__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit vel ipsum id pulvinar. Vivamus finibus eros sit amet massa feugiat feugiat.</p>
             <a href="#" class="article__button">Read More &raquo;</a>
         </div>
     </div>
-    
+
 
 
 
@@ -69,16 +69,36 @@
 
         .article-grid {
             /* parent element */
+            display:grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-gap: 1.5rem;
+            grid-auto-flow: dense; /* allows for movement inside the grid without changing markup */
+            /*dense can create interesting layouts*/
         }
         .article {
             /* child element */
+            display:grid;
+            align-items: start;
         }
 
+      .article__button {
+        align-self: end;
+      }
+
+      .article.medium {
+        grid-column: span 2; /* telling this item to span across 2 columns */
+        grid-row: span 2;
+      }
+
+      .article.large{
+          grid-column: span 3; /* telling this item to span across 3 columns */
+          grid-row: span 3;
+      }
 
 
 
 
- 
+
     </style>
 </body>
 </html>
