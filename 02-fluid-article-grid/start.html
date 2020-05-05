@@ -63,7 +63,7 @@
             <a href="#" class="article__button">Read More &raquo;</a>
         </div>
     </div>
-    
+
 
 
 
@@ -72,18 +72,31 @@
 
         .article-grid {
             /* parent element */
+            display: grid;
+            /*repeat(number of columns, width of column) replaces 1fr 1fr 1fr with this is more dry
+            minmax tells it to have minimum one width maximum another width
+            */
+            grid-template-columns: repeat(3, minmax(360px, 1fr));
+            grid-gap: 1.5rem;
+
 
         }
         .article {
             /* child element */
+            display: grid; /*here we are putting a grid inside the above grid nested*/
+            align-items: start; /* telling items how to act within grid, could be stretch  */
 
+        }
+
+        .article__button {
+          align-self: end;   /* align this specific item to the end, in this case to the very bottom of the grid card- this is very useful for allocating white space */
         }
 
 
 
 
 
- 
+
     </style>
 </body>
 </html>
