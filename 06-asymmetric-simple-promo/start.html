@@ -13,7 +13,7 @@
         <h1 class="exercise__headline">Bonus Exercise: Create a multi-promo banner</h1>
         <p class="exercise__description">Create a full-width banner that utilizes asymmetric grids to create an interesting multi-promo space.</p>
     </div>
-   
+
 
     <section class="banner">
             <a href="#" class="promo">This is a headline for a promo space</a>
@@ -21,14 +21,17 @@
             <a href="#" class="promo">This is a headline for a promo space This is a headline for a promo space This is a headline for a promo space This is a headline for a promo space This is a headline for a promo space</a>
             <a href="#" class="promo">This is a headline for a promo space</a>
     </section>
-    
+
 
 
     <style>
         /* I always recommend styling in a CSS file, but for simplicity, we'll use this style block */
-        
-        
 
+
+        .banner {
+          display: grid;
+          grid-template-columns: 2fr 1fr 1fr;
+        }
 
         .promo {
             background-image: url(../assets/images/ride.jpg);
