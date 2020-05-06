@@ -13,7 +13,7 @@
         <h1 class="exercise__headline">Exercise 4: Experiment with Grid in Banners</h1>
         <p class="exercise__description">In this exercise, we'll take a flexible grid to create multiple engaging banner "cover screens" for articles or marketing pages. This method allows designers to have very easy art direction over these areas.</p>
     </div>
-   
+
 
  <section class="promos">
 
@@ -33,7 +33,7 @@
         <p class="promo__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac arcu mollis, semper est ac, tincidunt purus. Cras efficitur maximus augue vitae volutpat. Nullam consectetur diam a dictum facilisis. </p>
 
         <a href="#" class="promo__button">Learn More &raquo;</a>
-        
+
         <img class="promo__image" src="https://images.unsplash.com/photo-1521379770009-7bafd3ec7a23?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=ce4848266618366ad30d7d35764c0bf4" alt="Ocean Scape">
 
     </div>
@@ -44,6 +44,97 @@
 
     <style>
         /* I always recommend styling in a CSS file, but for simplicity, we'll use this style block */
+      .promo {
+        display: grid;
+        grid-template-columns: [image-start] 1fr [image-end]; /*[] is just naming the grid areas*/
+        grid-template-rows: [image-start]10vh auto auto auto 10vh [image-end]; /*here were planning for an upper and lower margin with the content in the middle 3*/
+        /*these can be called anything as long as they match what you call further down when referencing the grid area*/
+        grid-template-areas: '.' /*the . signifies a blank cell*/
+                              'headline'
+                              'text'
+                              'button'
+                              '.'
+                              ;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+      }
+
+
+      .promo__headline,.promo__text,.promo__button {
+      z-index: 1; /*tell our text to sit on top of image*/
+      margin: 0 1rem;
+      }
+
+      .promo__headline{
+        grid-area: headline;
+      }
+
+      .promo__text {
+        grid-area: text;
+      }
+
+      .promo__button {
+        grid-area: button;
+      }
+
+      .promo__image {
+        grid-area: image;
+        align-self: stretch;
+        mix-blend-mode: overlay;
+      }
+
+      .p {
+        line-height: 1.4em;
+        margin-bottom: .75em;
+      }
+
+      .img {
+        max-width: 100%;
+      }
+
+      .promo {
+        margin: 2rem auto;
+      }
+
+
+      /*media queries create breakpoints for different screen sizes*/
+      @media (min-width: 667px) {
+        .promos {
+          display: grid;
+          grid-template-columns: 1fr 1fr; /*change columns based on screen size*/
+          grid-gap: 1rem;
+        }
+
+        /*media queries create breakpoints for different screen sizes*/
+        @media (min-width: 1024px) {
+          .promos {
+            width: 95vh;
+            margin: auto;
+            grid-template-columns: 1fr;
+          }
+          .promo {
+            background-color: transparent;
+            color: #333;
+            text-align: left;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: '........ image'
+                                 'headline image'
+                                 'text     image'
+                                 '.........image';
+          }
+          .promo-even {
+            grid-template-areas: 'image.........'
+                                 'image healdine'
+                                 'image text'
+                                 'image.........';
+          }
+
+      }
+
+
+
+
 
     </style>
 </body>
