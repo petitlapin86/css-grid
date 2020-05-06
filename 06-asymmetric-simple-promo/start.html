@@ -31,6 +31,18 @@
         .banner {
           display: grid;
           grid-template-columns: 2fr 1fr 1fr;
+          grid-template-rows: minmax(15vh, 1fr);
+          grid-template-areas: 'first second second'
+                               'first third  fourth';
+          grid-gap: 1rem;
+        }
+
+        .promo:nth-child(1) {
+          grid-area: first;
+        }
+
+        .promo:nth-child(2) {
+          grid-area: second;
         }
 
         .promo {
