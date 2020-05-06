@@ -13,23 +13,67 @@
         <h1 class="exercise__headline">Exercise 4: Experiment with Grid in Banners</h1>
         <p class="exercise__description">In this exercise, we'll take a flexible grid to create multiple engaging banner "cover screens" for articles or marketing pages. This method allows designers to have very easy art direction over these areas.</p>
     </div>
-   
-    <div class="banner">
 
-    </div>
+    <section class="banner">
+
+        <h1 class="banner__headline">Melding Art in Space</h1>
+
+        <h2 class="banner__subhead">Giving Rooms the Full Post-Modern Treatment</h2>
+
+        <h6 class="banner__secondary">By Architecture Awesome</h6>
+
+
+    </section>
 
 
 
     <style>
         /* I always recommend styling in a CSS file, but for simplicity, we'll use this style block */
+        body {
+            margin: 0;
+        }
 
+            /* This is an example of a full photo background
+            with an easily changeable placement of the headlines and subheadlines */
         .banner {
             /* parent element */
-
+            background-color: #8DC63F;
+            background-image: url(../assets/images/grid-banner-room.jpg);
+            background-size: cover;
+            background-position: top center;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-gap: 1vw;
+            padding: 1vw;
         }
-        
 
-/* Simple styles for visuals */
+
+        /* This is the main heading*/
+        .banner__headline {
+            grid-column: 4 / 6;   /* Telling headline which columns across to span */
+            grid-row: 2 / 4; /* Telling how far down in rows to position*/
+            align-self: end; /* aligns item to botom of grid cell*/
+        }
+
+          /* This is the sub heading*/
+        .banner__subhead {
+            grid-column: 3 / 4;
+            grid-row: 2 / 4;
+            align-self: end;
+            text-align: right;
+        }
+
+          /* This is the main heading*/
+        .banner__secondary {
+            grid-column: 4;
+            grid-row: 4;
+            align-self: start;
+        }
+
+
+        /* Simple styles for visuals */
         * {
             margin: 0;
             box-sizing: border-box;
@@ -57,7 +101,6 @@
 
 
 
- 
     </style>
 </body>
 </html>

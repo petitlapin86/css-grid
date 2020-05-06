@@ -13,12 +13,12 @@
         <h1 class="exercise__headline">Exercise 4: Experiment with Grid in Banners</h1>
         <p class="exercise__description">In this exercise, we'll take a flexible grid to create multiple engaging banner "cover screens" for articles or marketing pages. This method allows designers to have very easy art direction over these areas.</p>
     </div>
-   
+
     <div class="banner">
         <h1 class="banner__headline">The Secret World of Urban Forests</h1>
-        
+
         <h2 class="banner__subhead">We explore the inner darkness of urban forestry</h2>
-        
+
         <h6 class="banner__secondary">Image Courtesy of Unsplash</h6>
 
     </div>
@@ -35,16 +35,26 @@
             background-size: cover;
             background-position: top center;
             min-height: 100vh;
+
+            display: flex; /*flex allows for vertical and horizontal positioning*/
         }
-        
+
+
+        .banner_content {
+            margin: auto;
+            background-color: rgba(0,0,0,.3);
+            padding: 2rem;
+
+
+        }
         .banner__headline {
-            
+
         }
         .banner__subhead {
-            
+
         }
         .banner__secondary {
-            
+
         }
 
 
@@ -75,7 +85,7 @@
             line-height: 1.3em;
         }
 
- 
+
     </style>
 </body>
 </html>
