@@ -82,7 +82,23 @@
           display: grid;
           grid-template-columns: 2fr 1fr 1fr;
           grid-template-rows: auto auto;
+          grid-template-areas: 'mainImage second second'
+                               'mainImage third fourth';
+          align-items: stretch;
+          grid-gap: 1rem;
+        }
 
+        .gallery img {
+          object-fit: contain;
+          background-color: black;
+        }
+
+        .gallery img:nth-child(1) {
+          grid-area: mainImage;
+        }
+
+        .gallery img:nth-child(2) {
+          grid-area: second;
         }
 
         h1 {
